@@ -1,0 +1,291 @@
+<<!DOCTYPE html>
+<html lang="ms">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Peranan – Khairulnissa bt Halim</title>
+<link rel="stylesheet" href="style.css">
+<style>
+
+  /* ─── PAGE HERO ─── */
+  .page-hero {
+    padding: 8rem 4rem 4rem;
+    background: var(--foam);
+    border-bottom: 1px solid var(--latte);
+  }
+  .page-hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2rem, 4vw, 3.2rem);
+    font-weight: 600; color: var(--espresso);
+    margin-bottom: 1rem; line-height: 1.2;
+  }
+  .page-hero h1 em { font-style: italic; color: var(--caramel); }
+  .page-hero p { font-size: 0.95rem; color: var(--text-muted); line-height: 1.7; max-width: 520px; }
+
+  /* ─── SKILLS ─── */
+  #skills { background: var(--foam); }
+  .skills-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; }
+  .skill-category h3 {
+    font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.08em;
+    color: var(--caramel); font-weight: 500; margin-bottom: 1.2rem;
+  }
+  .skill-list { list-style: none; display: flex; flex-direction: column; gap: 0.75rem; }
+  .skill-list li {
+    display: flex; align-items: center; gap: 10px;
+    font-size: 0.9rem; color: var(--text-muted);
+  }
+  .skill-dot {
+    width: 7px; height: 7px; border-radius: 50%;
+    background: var(--caramel); flex-shrink: 0;
+  }
+  .tech-tags { display: flex; flex-wrap: wrap; gap: 8px; }
+  .tech-tag {
+    background: var(--latte); border-radius: 100px;
+    padding: 5px 14px; font-size: 0.8rem;
+    color: var(--brown-mid); font-weight: 500;
+  }
+
+  /* ─── CAFÉ LIFE ─── */
+  #cafe { background: var(--brown-dark); color: var(--cream); }
+  #cafe .section-label { color: var(--latte); }
+  #cafe .section-title { color: #FFF0F5; }
+  #cafe .divider { background: linear-gradient(to right, var(--latte), var(--caramel)); }
+  .cafe-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
+  .cafe-card {
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(248,187,217,0.2);
+    border-radius: 12px; padding: 1.5rem;
+    transition: background 0.2s;
+  }
+  .cafe-card:hover { background: rgba(255,255,255,0.1); }
+  .cafe-card-icon { font-size: 1.6rem; margin-bottom: 1rem; display: block; }
+  .cafe-card h3 {
+    font-family: 'Playfair Display', serif; font-size: 1rem;
+    color: var(--latte); margin-bottom: 0.5rem;
+  }
+  .cafe-card p { font-size: 0.85rem; color: rgba(255,240,245,0.65); line-height: 1.7; }
+  .quote-block {
+    margin-top: 3rem; padding: 2rem;
+    border-left: 3px solid var(--latte);
+    background: rgba(248,187,217,0.08);
+    border-radius: 0 10px 10px 0; max-width: 580px;
+  }
+  .quote-block blockquote {
+    font-family: 'Playfair Display', serif; font-style: italic;
+    font-size: 1.05rem; color: rgba(255,240,245,0.9); line-height: 1.7;
+  }
+  .quote-attr { font-size: 0.78rem; color: var(--latte); margin-top: 0.75rem; }
+
+  /* ─── TECHNOLOGY ─── */
+  #technology { background: var(--cream); }
+  .tech-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; }
+  .tech-block h3 {
+    font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.08em;
+    color: var(--caramel); font-weight: 500; margin-bottom: 1.2rem;
+  }
+  .device-list { display: flex; flex-direction: column; gap: 0.9rem; }
+  .device-item {
+    display: flex; align-items: center; gap: 1rem;
+    padding: 0.85rem 1rem;
+    background: var(--foam); border: 1px solid var(--latte);
+    border-radius: 10px; font-size: 0.88rem; color: var(--text-muted);
+    transition: border-color 0.2s;
+  }
+  .device-item:hover { border-color: var(--caramel); }
+  .device-icon {
+    width: 34px; height: 34px; background: var(--latte);
+    border-radius: 8px; display: flex; align-items: center;
+    justify-content: center; font-size: 1rem; flex-shrink: 0;
+  }
+  .level-badge {
+    display: inline-flex; align-items: center; gap: 6px;
+    background: var(--latte); border-radius: 100px;
+    padding: 6px 16px; font-size: 0.78rem;
+    color: var(--brown-mid); font-weight: 500; margin-top: 1rem;
+  }
+
+  /* ─── SATISFACTION ─── */
+  #satisfaction { background: var(--foam); }
+  .sat-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; max-width: 780px; }
+  .sat-card {
+    background: var(--cream); border: 1px solid var(--latte);
+    border-radius: 12px; padding: 1.5rem; text-align: center;
+    box-shadow: 0 4px 20px rgba(233,30,140,0.06);
+  }
+  .sat-icon { font-size: 2rem; margin-bottom: 0.75rem; display: block; }
+  .sat-label { font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--caramel); font-weight: 500; margin-bottom: 0.3rem; }
+  .sat-value { font-family: 'Playfair Display', serif; font-size: 1.05rem; color: var(--espresso); font-weight: 600; }
+
+  @media (max-width: 768px) {
+    .page-hero { padding: 6rem 1.5rem 2.5rem; }
+    .skills-layout, .tech-grid { grid-template-columns: 1fr; gap: 2rem; }
+    .cafe-grid, .sat-grid { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="index.html" class="nav-logo">Khairulnissa bt Halim</a>
+  <ul class="nav-links">
+    <li><a href="index.html">Utama</a></li>
+    <li><a href="about.html">Tentang</a></li>
+    <li><a href="role.html" class="active">Peranan</a></li>
+  </ul>
+</nav>
+
+<!-- PAGE HERO -->
+<div class="page-hero fade-up">
+  <div class="section-label">Kerja & Kemahiran</div>
+  <h1>Peranan di <em>Café Rutyn</em></h1>
+  <p>Kemahiran operasi, pengalaman harian, dan pandangan Khairulnissa sebagai Kitchen Crew sepenuh hati di Café Rutyn.</p>
+</div>
+
+<!-- SKILLS -->
+<section id="skills">
+  <div class="section-label">Kemahiran</div>
+  <h2 class="section-title">Apa Yang <em>Saya Boleh Buat?</em></h2>
+  <div class="divider"></div>
+  <div class="skills-layout">
+    <div class="skill-category">
+      <h3>Kemahiran Operasi</h3>
+      <ul class="skill-list">
+        <li><span class="skill-dot"></span>Membuat minuman (Barista)</li>
+        <li><span class="skill-dot"></span>Mengendalikan Cashier</li>
+        <li><span class="skill-dot"></span>Memasak &amp; menyediakan bahan</li>
+        <li><span class="skill-dot"></span>Mengambil order pelanggan</li>
+        <li><span class="skill-dot"></span>Pengurusan stok</li>
+      </ul>
+    </div>
+    <div class="skill-category">
+      <h3>Kemahiran Lembut</h3>
+      <ul class="skill-list">
+        <li><span class="skill-dot"></span>Customer service yang mesra</li>
+        <li><span class="skill-dot"></span>Komunikasi berkesan</li>
+        <li><span class="skill-dot"></span>Bekerja dalam pasukan</li>
+        <li><span class="skill-dot"></span>Pengurusan masa</li>
+        <li><span class="skill-dot"></span>Adaptasi dalam situasi sibuk</li>
+      </ul>
+    </div>
+    <div class="skill-category">
+      <h3>Maklumat Diperlukan Semasa Kerja</h3>
+      <div class="tech-tags">
+        <span class="tech-tag">Jadual Kerja</span>
+        <span class="tech-tag">Menu / Harga</span>
+        <span class="tech-tag">Tugasan Harian</span>
+        <span class="tech-tag">Notis Penting</span>
+      </div>
+    </div>
+    <div class="skill-category">
+      <h3>Komunikasi Pilihan</h3>
+      <ul class="skill-list">
+        <li><span class="skill-dot"></span>WhatsApp</li>
+        <li><span class="skill-dot"></span>Bersemuka</li>
+        <li><span class="skill-dot"></span>Panggilan telefon</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- CAFÉ LIFE -->
+<section id="cafe">
+  <div class="section-label">Kehidupan di Café</div>
+  <h2 class="section-title">Pengalaman di <em>Café Rutyn</em></h2>
+  <div class="divider"></div>
+  <div class="cafe-grid">
+    <div class="cafe-card">
+      <span class="cafe-card-icon">☕</span>
+      <h3>Tugas Harian</h3>
+      <p>Mengambil order pelanggan, menyediakan bahan masakan, dan berhadapan langsung dengan pelanggan setiap hari dengan senyuman.</p>
+    </div>
+    <div class="cafe-card">
+      <span class="cafe-card-icon">🌸</span>
+      <h3>Yang Disukai</h3>
+      <p>Persekitaran kerja yang mudah dan santai. Menu yang ringkas memudahkan urusan dengan pelanggan dan menjadikan kerja lebih teratur.</p>
+    </div>
+    <div class="cafe-card">
+      <span class="cafe-card-icon">💪</span>
+      <h3>Cara Atasi Cabaran</h3>
+      <p>Apabila pelanggan ramai, ambil rehat seketika dan seduh secawan kopi untuk menyegarkan diri sebelum sambung bertugas semula.</p>
+    </div>
+    <div class="cafe-card">
+      <span class="cafe-card-icon">💬</span>
+      <h3>Komunikasi Staf</h3>
+      <p>Komunikasi sesama staf dinilai baik. Walaupun pernah berlaku kes salah order akibat salah faham, ia diselesaikan secara profesional.</p>
+    </div>
+    <div class="cafe-card">
+      <span class="cafe-card-icon">📋</span>
+      <h3>Cadangan Penambahbaikan</h3>
+      <p>Jadual kerja yang lebih teratur diperlukan supaya operasi harian dapat berjalan dengan lebih lancar dan efisien.</p>
+    </div>
+    <div class="cafe-card">
+      <span class="cafe-card-icon">🌐</span>
+      <h3>Kepentingan Website</h3>
+      <p>Website sangat penting untuk menyediakan info menu, waktu operasi, dan maklumat café agar pelanggan mudah mendapat maklumat.</p>
+    </div>
+  </div>
+  <div class="quote-block">
+    <blockquote>"Pengalaman pertama bekerja di Café Rutyn adalah sangat memuaskan kerana suasana kerja yang selesa dan mesra."</blockquote>
+    <div class="quote-attr">— Khairulnissa bt Halim, Kitchen Crew · Café Rutyn</div>
+  </div>
+</section>
+
+<!-- TECHNOLOGY -->
+<section id="technology">
+  <div class="section-label">Teknologi</div>
+  <h2 class="section-title">Penggunaan <em>Teknologi</em></h2>
+  <div class="divider"></div>
+  <div class="tech-grid">
+    <div class="tech-block">
+      <h3>Peranti yang Digunakan</h3>
+      <div class="device-list">
+        <div class="device-item"><div class="device-icon">📱</div>Telefon Pintar</div>
+        <div class="device-item"><div class="device-icon">💻</div>Laptop</div>
+      </div>
+      <div class="level-badge">⭐ Tahap Kemahiran: Tinggi</div>
+    </div>
+    <div class="tech-block">
+      <h3>Platform Komunikasi</h3>
+      <div class="device-list">
+        <div class="device-item"><div class="device-icon">💬</div>WhatsApp</div>
+        <div class="device-item"><div class="device-icon">🤝</div>Bersemuka</div>
+        <div class="device-item"><div class="device-icon">📞</div>Panggilan Telefon</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SATISFACTION -->
+<section id="satisfaction">
+  <div class="section-label">Penilaian</div>
+  <h2 class="section-title">Penilaian <em>Kerja</em></h2>
+  <div class="divider"></div>
+  <div class="sat-grid">
+    <div class="sat-card">
+      <span class="sat-icon">😊</span>
+      <div class="sat-label">Kepuasan Kerja</div>
+      <div class="sat-value">Puas Hati</div>
+    </div>
+    <div class="sat-card">
+      <span class="sat-icon">🗣️</span>
+      <div class="sat-label">Komunikasi Staf</div>
+      <div class="sat-value">Baik</div>
+    </div>
+    <div class="sat-card">
+      <span class="sat-icon">⏰</span>
+      <div class="sat-label">Hari Bekerja</div>
+      <div class="sat-value">6 Hari / Minggu</div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <p>© 2025 Khairulnissa bt Halim · Kitchen Crew, Café Rutyn ·
+    <a href="index.html">Utama</a> · <a href="about.html">Tentang</a>
+  </p>
+</footer>
+
+</body>
+</html>
