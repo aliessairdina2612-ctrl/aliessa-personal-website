@@ -1,0 +1,118 @@
+/* ═══════════════════════════════════════
+   style.css — Khairulnissa bt Halim
+   Shared stylesheet for all pages
+═══════════════════════════════════════ */
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=DM+Sans:wght@300;400;500&display=swap');
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --cream: #FFF0F5;
+  --brown-dark: #6B1A3A;
+  --brown-mid: #C2185B;
+  --brown-light: #E57399;
+  --caramel: #E91E8C;
+  --gold: #F48FB1;
+  --espresso: #3D0026;
+  --latte: #F8BBD9;
+  --foam: #FFF5F8;
+  --text-muted: #AD5077;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'DM Sans', sans-serif;
+  background-color: var(--cream);
+  color: var(--brown-dark);
+  overflow-x: hidden;
+}
+
+/* ─── NAV ─── */
+nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+  background: rgba(247,243,236,0.92);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--latte);
+  padding: 1rem 2rem;
+  display: flex; align-items: center; justify-content: space-between;
+}
+.nav-logo {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.1rem; font-weight: 600;
+  color: var(--brown-mid);
+  letter-spacing: 0.03em;
+  text-decoration: none;
+}
+.nav-links { display: flex; gap: 2rem; list-style: none; }
+.nav-links a {
+  text-decoration: none; font-size: 0.85rem; font-weight: 500;
+  color: var(--text-muted); letter-spacing: 0.05em; text-transform: uppercase;
+  transition: color 0.2s;
+}
+.nav-links a:hover { color: var(--caramel); }
+.nav-links a.active { color: var(--caramel); border-bottom: 2px solid var(--caramel); padding-bottom: 2px; }
+
+/* ─── SECTION SHARED ─── */
+section { padding: 5rem 4rem; }
+
+.section-label {
+  font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.1em;
+  color: var(--caramel); font-weight: 500; margin-bottom: 0.5rem;
+}
+.section-title {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(1.6rem, 3vw, 2.4rem); font-weight: 600;
+  color: var(--espresso); margin-bottom: 1rem;
+}
+.divider {
+  width: 40px; height: 2px; background: var(--caramel);
+  margin-bottom: 2.5rem;
+}
+
+/* ─── PAGE HEADER (for inner pages) ─── */
+.page-hero {
+  padding: 8rem 4rem 4rem;
+  background: var(--foam);
+  border-bottom: 1px solid var(--latte);
+}
+.page-hero .section-label { margin-bottom: 0.75rem; }
+.page-hero h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2rem, 4vw, 3.2rem);
+  font-weight: 600; color: var(--espresso);
+  margin-bottom: 1rem;
+}
+.page-hero h1 em { font-style: italic; color: var(--caramel); }
+.page-hero p {
+  font-size: 0.95rem; color: var(--text-muted);
+  line-height: 1.7; max-width: 520px;
+}
+
+/* ─── FOOTER ─── */
+footer {
+  text-align: center; padding: 2rem;
+  background: var(--brown-dark); color: rgba(247,243,236,0.4);
+  font-size: 0.78rem;
+}
+footer a { color: var(--caramel); text-decoration: none; }
+footer a:hover { text-decoration: underline; }
+
+/* ─── ANIMATIONS ─── */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.fade-up { animation: fadeUp 0.7s ease both; }
+.fade-up:nth-child(2) { animation-delay: 0.1s; }
+.fade-up:nth-child(3) { animation-delay: 0.2s; }
+.fade-up:nth-child(4) { animation-delay: 0.3s; }
+
+/* ─── RESPONSIVE ─── */
+@media (max-width: 768px) {
+  nav { padding: 1rem; }
+  .nav-links { display: none; }
+  section { padding: 3rem 1.5rem; }
+  .page-hero { padding: 6rem 1.5rem 2.5rem; }
+}
